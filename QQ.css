@@ -1,0 +1,213 @@
+.safe {
+    width: 960px;
+    height: 75px;
+}
+
+/* 导航栏 */
+.top {
+    position: absolute;
+    z-index: 1;
+    left: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.top1 h1 {
+    width: 106px;
+    background: url(./img/imlogo_b.png) no-repeat center;
+    margin-right: 50px;
+}
+
+.top1 li {
+    text-align: center;
+    width: 76px;
+    height: 75px;
+    line-height: 75px;
+}
+
+.top2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.top2 li {
+    height: 40px;
+    padding: 0px 30px;
+    border-radius: 20px;
+    line-height: 40px;
+}
+
+.top2 li:not(:first-of-type):hover {
+    color: #12b7f5;
+}
+
+.top ul {
+    cursor: pointer;
+}
+
+/* 轮播图 */
+.img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.pic {
+    position: relative;
+    width: 9999px;
+}
+
+.img img {
+    float: left;
+    width: 1920px;
+}
+
+/* 轮播图按钮 */
+.dots {
+    position: absolute;
+    /* width: 100px; */
+    bottom: 100px;
+    right: 50%;
+    text-align: center;
+    border-radius: 15px;
+    /* background-color: #fff3; */
+}
+
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #757575;
+    opacity: .6;
+}
+
+.dots span.current {
+    background-color: #fff;
+    border: 2px #757575 solid;
+    transform: translateY(2px);
+}
+
+.action {
+    background: #12b7f5;
+    color: white;
+}
+
+.active {
+    background: #12b7f5;
+}
+
+#brand {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 第一张背景 */
+.back1 {
+    height: 600px;
+    background: url(./img/fisrtbg.jpg);
+    background-attachment: fixed;
+}
+
+/* 沟通栏1 */
+
+.coc1 {
+    height: 584px;
+    position: relative;
+}
+
+.coc1 img {
+    position: absolute;
+    left: 0;
+    top: -180px;
+}
+
+.text {
+    float: right;
+    width: 487px;
+}
+
+.text h2 {
+    margin-top: 135px;
+    width: 487px;
+    height: 135px;
+    background: url(./img/qcall_txt.png) no-repeat 0 0;
+}
+
+.text p {
+    width: 487px;
+    height: 50px;
+    float: right;
+    font-size: 18px;
+    text-indent: 4em;
+    letter-spacing: .12em;
+    opacity: .6;
+    text-align: right;
+    margin-bottom: 12px;
+}
+
+.text a {
+    float: right;
+    display: block;
+    color: #12b7f5;
+    font-size: 18px;
+    opacity: .6;
+}
+
+/* 第二张背景 */
+.back2 {
+    height: 600px;
+    background: url(./img/avd.jpg);
+    background-attachment: fixed;
+}
+
+.coc2 {
+    height: 584px;
+    position: relative;
+}
+
+.coc2 img {
+    right:-100px;
+    top: 150px;
+    position: absolute;
+}
+.text2 {
+    float: left;
+    width: 450px;
+}
+.text2 h2 {
+    margin-top: 135px;
+    width: 450px;
+    height: 135px;
+    background: url(./img/txt.png) no-repeat 0 0;
+}
+
+.text2 p {
+    width: 410px;
+    height: 50px;
+    font-size: 18px;
+    /* text-indent: 4em;
+    letter-spacing: .12em; */
+    opacity: .6;
+    margin-bottom: 12px;
+}
+
+.text2 a {
+    display: block;
+    color: #12b7f5;
+    font-size: 18px;
+    opacity: .6;
+}
+
+/* 底部 */
+
+.bot {
+    height: 286px;
+    background: #2a2a2a;
+}
