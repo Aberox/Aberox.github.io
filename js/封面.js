@@ -9,6 +9,6 @@ setTimeout(function () {
 //     window.open("首页.htMl", "_self")
 // }
 document.onkeydown = function () {
-    window.open("首页.htMl", "_blank")
+    window.open("./html/首页.htMl", "_blank")
 }
 
