@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.safe {
+    width: 1226px;
+    margin: 0 auto;
+}
+
+
+.clear:after {
+    content: "";
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+    display: block;
+}

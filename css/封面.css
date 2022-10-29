@@ -1,0 +1,74 @@
+/* 清空浏览器的默认值 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd,li,form,input,img,textarea,select,iframe{
+    margin: 0;
+    padding: 0;
+} */
+
+/* 去掉超链接的下划线 */
+a {
+    text-decoration: none;
+    /* color:  */
+}
+
+/* 去掉列表符号 */
+li {
+    list-style: none;
+}
+
+/* 图片向下撑大3px */
+img {
+    vertical-align: middle;
+    border: none;
+}
+
+/* 万能清除法 */
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+.safe {
+    max-width: 80%;
+    margin: auto;
+    top: 60%;
+    left: 50%;
+    margin: -150px -500px;
+    height: 20%;
+    position: absolute;
+
+}
+
+.preface h2 {
+    font-size: 50px;
+    transition: 1s;
+}
+
+.preface p {
+    float: right;
+    font-size: 12px;
+    color: #666;
+}
+.preface:hover h2 {
+    font-size: 52px;
+}
+
+video {
+    width: 100%;
+}

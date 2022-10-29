@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 贪吃蛇 </title>
+    <style>
+        .container {
+            border: 2px solid #333;
+        }
+
+        .container:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .container div {
+            border: 1px solid #888;
+            box-sizing: border-box;
+            float: left;
+            background-size: cover;
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 创建游戏的容器 -->
+    <div class="container"></div>
+    <p color="red">按空格键开始游戏 <br>
+        重新开始刷新网页</p>
+
+    <script src="js/map.js"></script>
+    <script src="js/snake.js"></script>
+    <script src="js/stone.js"></script>
+    <script src="js/food.js"></script>
+    <script src="js/game.js"></script>
+
+    <script>
+        // var snake = new Game(10, 10, 60, 60, ".container");
+        var snake = new Game(20, 20, 30, 30, ".container");
+        // console.log(snake);
+        snake.init();
+    </script>
+
+</body>
+
+</html>

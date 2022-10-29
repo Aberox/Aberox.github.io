@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='icon' href='data:image/x-ico;base64,='>
+    <style>
+        #piano {
+            width: 364px;
+            height: 300px;
+   
+        }
+
+        #piano li {
+            width: 50px;
+            height: 300px;
+            float: left;
+            text-align: center;
+            list-style: none;
+            font-size: 30px;
+            border: 1px solid #333;
+        }
+
+        #piano li.active {
+            background: pink;
+        }
+
+        div {
+            width: 370px;
+            position: relative;
+            margin: 50px auto 0;
+        }
+
+        p {
+            position: absolute;
+            right: 50px;
+        }
+        li:nth-of-type(even){
+            background:rgba(0, 0, 0, .2);
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <ul id="piano">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+        <p>按键键盘指定数字弹奏</p>
+    </div>
+
+    <audio src="./audio/1.mp3" autoplay></audio>
+
+    <script>
+
+        var lis = document.querySelectorAll('li');
+        var audio = document.querySelector('audio');
+
+        document.onkeydown = function (ev) {
+
+            // console.log( ev.key );
+            // console.log(lis[ev.key - 1]);
+
+            if (lis[ev.key - 1]) {
+                audio.src = "./audio/" + ev.key + ".mp3";
+                lis[ev.key - 1].className = 'active';
+            }
+
+        };
+
+        document.onkeyup = function (ev) {
+            if (lis[ev.key - 1]) {
+                lis[ev.key - 1].className = '';
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

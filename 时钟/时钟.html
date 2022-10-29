@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            box-shadow: 0 0 10px #000;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas width="418" height="418"></canvas>
+    
+<script>
+
+    var cvs = document.querySelector('canvas');
+
+    // 获取画笔
+    var ctx = cvs.getContext("2d");
+
+
+    // 加载背景
+    loadImage("images/clock.png", function() {
+        // showTime(this);
+
+        setInterval(showTime, 1000, this);
+
+    });
+
+
+    function showTime(img) {
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+
+        console.log(h, m , s);
+
+        ctx.restore();
+        ctx.save();
+
+        // 绘制表盘
+        ctx.clearRect(0,0,cvs.width, cvs.height);
+        ctx.beginPath();
+        ctx.drawImage(img, 0, 0);
+
+        // 绘制时针
+        ctx.strokeStyle = "purple";
+        ctx.lineWidth = 10;
+        ctx.translate(209, 209);
+        ctx.rotate(Math.PI / 180 * (-90 + 30 * h + m / 12 * 6));
+
+        ctx.moveTo(0, 0);
+        ctx.lineTo(80, 0);
+        ctx.stroke();
+
+        // 绘制分针
+        ctx.beginPath();
+        ctx.restore();
+        ctx.save();
+        ctx.translate(209, 209);
+        ctx.rotate(Math.PI / 180 * (-90 + 6 * m +  s / 60 * 6)  );
+        ctx.strokeStyle = "orange";
+        ctx.lineWidth = 6;
+
+        ctx.moveTo(0, 0);
+        ctx.lineTo(100, 0);
+        ctx.stroke();
+
+        // 绘制秒针
+        ctx.beginPath();
+        ctx.restore();
+        ctx.save();
+        ctx.translate(209, 209);
+        ctx.rotate(Math.PI / 180 * (-90 + 6 * s ));
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 2;
+
+        ctx.moveTo(0, 0);
+        ctx.lineTo(140, 0);
+        ctx.stroke();
+
+    }
+
+    //   (s / 60) * 6 
+
+    function loadImage(src, fn) {
+
+        var img = new Image();
+
+        img.onload = function() {
+
+            if (typeof fn === 'function') {
+                // fn(img);
+                fn.call(img);
+            }
+
+        };
+
+        img.src = src;
+    }
+
+</script>
+
+</body>
+</html>
